@@ -18,5 +18,8 @@ CODE=$(echo "${JSON}" | jq -r '.countryCode')
 
 # Drapeau
 FILE="${HOME}/.local/share/flags/${CODE}.png"
-FLAG=$(cat "${FILE}" | base64 -w 0)
+if [[ -f "${FILE}" ]]
+then
+	FLAG=$(cat "${FILE}" | base64 -w 0)
+fi
 
