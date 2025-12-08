@@ -20,6 +20,6 @@ CODE=$(echo "${JSON}" | jq -r '.countryCode')
 FILE="${HOME}/.local/share/flags/${CODE}.png"
 if [[ -f "${FILE}" ]]
 then
-	FLAG=$(cat "${FILE}" | base64 -w 0)
+	FLAG=$(base64 -w 0 "${FILE}")
 fi
 
